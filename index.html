@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gau Seva - Desi Cow Products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f8f6;
+        }
+
+        header {
+            background-color: #9c661f;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .product {
+            display: flex;
+            align-items: center;
+            background: #fff;
+            border: 1px solid #ddd;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 200px;
+            height: 200px;
+            margin-right: 20px;
+            border-radius: 8px;
+        }
+
+        .order-button,
+        .pay-button {
+            background-color: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .order-button:hover,
+        .pay-button:hover {
+            background-color: #1da851;
+        }
+
+        /* Payment Popup */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .popup img {
+            width: 250px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .popup button {
+            background-color: red;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #25D366;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.2);
+            font-size: 16px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #9c661f;
+            color: #fff;
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>गौ सेवा - Desi Cow Products</h1>
+        <p>Promoting Desi Cow Welfare and Sustainable Products</p>
+    </header>
+    <style>
+        .center-image {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 35%;
+        }
+    </style>
+    <h1 style="text-align: center;"></h1>
+    <img Src="Gau mata image.jpg" alt="Gau Mata" class="center-image">
+    <main>
+        <h2>Desi Cow Mata</h2>
+        <p>The Maharashtra government recently declared indigenous cows as "Rajya Mata-Gomata," recognizing their
+            historical, nutritional, and agricultural significance. This decision highlights the importance of desi cows
+            in India's cultural and spiritual heritage, as well as their role in sustainable farming practices.
+
+            Desi cow milk is valued for its nutritional benefits and is often used in Ayurvedic treatments.
+            Additionally, cow dung plays a crucial role in organic farming by enhancing soil fertility. To support the
+            care of these cows, the government has introduced a subsidy scheme, offering ₹50 per day for each cow in
+            goshalas (cow shelters). This initiative aims to preserve indigenous breeds, whose population has been
+            declining. </p>
+        <div class="container">
+            <!-- Product 1 -->
+            <div class="product">
+                <img src="cow milk.jpg">
+                <div>
+                    <h2>Desi Cow Milk</h2>
+                    <p>Desi Cow Milk,A2 milk is knows for its numerous health benefits.</p>
+                    <p><strong>Price:</strong> ₹70 (500ml)</p>
+                    <button class="order-button" onclick="orderWhatsApp('A2 Desi Cow Milk',70)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="product">
+                <img src="Desi cow ghee.jpg" alt="A2 Cow Ghee">
+                <div>
+                    <h2>A2 Desi Cow Ghee</h2>
+                    <p>Pure A2 cow ghee, made using traditional bilona method. Rich in nutrients and taste.</p>
+                    <p><strong>Price:</strong> ₹900 (500ml)</p>
+                    <button class="order-button" onclick="orderWhatsApp('A2 Desi Cow Ghee', 900)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 3 -->
+            <div class="product">
+                <img src="soaps.jpg" alt="Soap">
+                <div>
+                    <h2>Panchgavya Soap</h2>
+                    <p>Made with pure cow derivatives to rejuvenate your skin. Eco-friendly and chemical-free</p>
+                    <p><strong>Price:</strong> ₹150 </p>
+                    <button class="order-button" onclick="orderWhatsApp('Panchgavya Soap', 150)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 4 -->
+            <div class="product">
+                <img src="floor cleaner.jpg" alt="Floor Cleaner">
+                <div>
+                    <h2>Floor Cleaner</h2>
+                    <p>Desi cow-based floor cleaners, made with natural ingredients like gomutra, are eco-friendly,
+                        antibacterial, and safe alternatives to chemical cleaners.</p>
+                    <p><strong>Price:</strong> ₹80 (1L)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Floor Cleaner', 80)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="product">
+                <img src="gaumutra arka.jpg" alt="Gaumutra Arka">
+                <div>
+                    <h2>Gaumutra Arka</h2>
+                    <p>Purifies and Rectifies the Body</p>
+                    <p><strong>Price:</strong> ₹180(500ml)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Gaumutra Arka', 180)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 6 -->
+            <div class="product">
+                <img src="red dantamanjan.jpg"
+                    alt="Gaumaya Red Dantamanjan">
+                <div>
+                    <h2>Gaumaya Red Dantamanjan</h2>
+                    <p>Desi cow-based red tooth powder strengthens teeth, promotes gum health, and prevents oral
+                        infections naturally..</p>
+                    <p><strong>Price:</strong> ₹40 (50g)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Gaumaya Red Dantamanjan', 40)">Order
+                        Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 7 -->
+            <div class="product">
+                <img src="dant jyoti.jpg" alt="Dant Jyoti toothpaste">
+                <div>
+                    <h2>Dant Jyoti toothpaste</h2>
+                    <p>Dant Jyoti toothpaste, enriched with desi cow products, supports strong teeth, healthy gums, and
+                        natural oral care.</p>
+                    <p><strong>Price:</strong> ₹20 (50g)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Dant Jyoti toothpaste', 20)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 8 -->
+            <div class="product">
+                <img src="nasya.jpg" alt="Nasya Eye Drop">
+                <div>
+                    <h2>Nasya Eye Drop</h2>
+                    <p>Eye drops made from desi cow products are believed to soothe irritation, enhance vision, and
+                        support eye health naturally.</p>
+                    <p><strong>Price:</strong> ₹60 (10ml)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Nasya Eye Drop', 60)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 9 -->
+            <div class="product">
+                <img src="shravan taifa.jpg" alt="Shravan Taila Ear Drop">
+                <div>
+                    <h2>Shravan Taila Ear Drop</h2>
+                    <p>NasyaEar drops made from desi cow products, like gomutra, are traditionally used for ear
+                        infections, pain relief, and maintaining ear health naturally.</p>
+                    <p><strong>Price:</strong> ₹60 (10ml)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Shravan Taila Ear Drop', 60)">Order
+                        Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 10 -->
+            <div class="product">
+                <img src="liquid balm.jpg" alt="Uttan Liquid Balm">
+                <div>
+                    <h2>Uttan Liquid Balm</h2>
+                    <p>Uttan Liquid Balm with desi cow products offers natural relief from pain and enhances blood
+                        circulation effectively.</p>
+                    <p><strong>Price:</strong> ₹75 (10ml)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Uttan Liquid Balm', 75)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 11 -->
+            <div class="product">
+                <img src="dhoop.jpg"
+                    alt="Bright Cowdry Incense Stick/Dhoop Stick">
+                <div>
+                    <h2>Bright Cowdry Incense Stick/Dhoop Stick</h2>
+                    <p>Dhoop sticks made from desi cow products, like cow dung and ghee, are eco-friendly, purify the
+                        air, and create a serene atmosphere.</p>
+                    <p><strong>Price:</strong> ₹40 (1p)</p>
+                    <button class="order-button"
+                        onclick="orderWhatsApp('Bright Cowdry Incense Stick/Dhoop Stick', 40)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 12 -->
+            <div class="product">
+                <img src="dhoop b.jpg" alt="Dhoop Stick">
+                <div>
+                    <h2>Dhoop Stick</h2>
+                    <p>Dhoop sticks made from desi cow products, like cow dung and ghee, are eco-friendly, purify the
+                        air, and create a serene atmosphere.</p>
+                    <p><strong>Price:</strong> ₹45 (1p)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Dhoop stick', 45)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 13 -->
+            <div class="product">
+                <img src="organic manure.jpg" alt="Organic Manure">
+                <div>
+                    <h2>Organic Manure</h2>
+                    <p>Organic manure made from desi cow products enriches soil naturally, boosts plant growth, and
+                        improves soil health.</p>
+                    <p><strong>Price:</strong> ₹75 (1Kg)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Organic Manure', 75)">Order Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+            <!-- Product 14 -->
+            <div class="product">
+                <img src="cow dung.jpg" alt="Organic Cow Dung Kanda">
+                <div>
+                    <h2>Organic Cow Dung Kanda</h2>
+                    <p>Organic cow dung kanda is eco-friendly, used for rituals, natural fuel, and enriching soil
+                        health.</p>
+                    <p><strong>Price:</strong> ₹75 (1Kg)</p>
+                    <button class="order-button" onclick="orderWhatsApp('Organic Cow Dung Kanda', 75)">Order
+                        Now</button>
+                    <button class="pay-button" onclick="showPaymentPopup()">Pay Now</button>
+                </div>
+            </div>
+
+            <section>
+                <h2>Contact Us</h2>
+                <p><strong>Address:</strong> Rathodi Villge, Marve Road Malad West, Mumbai, Maharashtra, 400095</p>
+                <p><strong>Helpline:</strong> +91 8356997269</p>
+            </section>
+        </div>
+
+        <footer>
+            <p>© 2025 Gau Seva. All Rights Reserved.</p>
+        </footer>
+
+        <!-- Floating WhatsApp Button -->
+        <a href="https://wa.me/918356997269?text=Hello, I am interested in your products!" target="_blank"
+            class="whatsapp-button">
+            Chat on WhatsApp
+        </a>
+
+        <!-- Payment Popup -->
+        <div id="paymentPopup" class="popup">
+            <h2>Scan to Pay</h2>
+            <img src="gpay.jpg" width=50% heigth=100" alt="UPI QR CODE">
+            <p>Scan this QR code using any UPI app to complete your payment.</p>
+            <button onclick="closePaymentPopup()">Close</button>
+        </div>
+
+        <script>
+            function orderWhatsApp(product, price) {
+                var message = "Hello, I want to order " + product + " for ₹" + price + ".";
+                var whatsappUrl = "https://wa.me/918356997269?text=" + encodeURIComponent(message);
+                window.open(whatsappUrl, "_blank");
+            }
+
+            function showPaymentPopup() {
+                document.getElementById('paymentPopup').style.display = 'block';
+            }
+
+            function closePaymentPopup() {
+                document.getElementById('paymentPopup').style.display = 'none';
+            }
+        </script>
+
+</body>
+
+</html>
